@@ -1,0 +1,244 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* navigation /*
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+main {
+  padding: 20px;
+  margin-left: 100px; /* Space for the navbar */
+}
+
+/* Navigation Bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px; /* Collapsed width */
+  height: 100vh;
+  background-color: #00000000;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  z-index: 1000;
+}
+
+.navbar:hover {
+  width: 200px; /* Expanded width */
+}
+
+.navbar-toggle {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.toggle-icon {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.toggle-icon::before,
+.toggle-icon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.toggle-icon::before {
+  transform: translateY(-8px);
+}
+
+.toggle-icon::after {
+  transform: translateY(8px);
+}
+
+.navbar:hover .toggle-icon {
+  transform: rotate(45deg);
+}
+
+.navbar:hover .toggle-icon::before {
+  transform: rotate(90deg);
+}
+
+.navbar:hover .toggle-icon::after {
+  transform: rotate(90deg);
+}
+
+.navbar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.navbar-menu li {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.navbar:hover .navbar-menu li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.navbar-menu li:nth-child(1) { transition-delay: 0.1s; }
+.navbar-menu li:nth-child(2) { transition-delay: 0.2s; }
+.navbar-menu li:nth-child(3) { transition-delay: 0.3s; }
+.navbar-menu li:nth-child(4) { transition-delay: 0.4s; }
+.navbar-menu li:nth-child(5) { transition-delay: 0.5s; }
+
+.navbar-menu li a {
+  display: block;
+  padding: 15px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+  background-color: #000000;
+}
+.navbar.expanded {
+  width: 200px;
+}
+
+.navbar.expanded .navbar-menu li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  text-align: center;
+  
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin: 0;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero-content span {
+  color: #ffeb3b;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  animation: slideIn 1.5s ease-in-out;
+}
+
+.cta-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ffeb3b;
+  color: #1a1a1a;
+  text-decoration: none;
+  border-radius: 5px;
+  animation: bounce 2s infinite;
+}
+
+/* Portfolio Section */
+.portfolio {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.portfolio-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
+
+/* Scroll Animation */
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.scroll-animation.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

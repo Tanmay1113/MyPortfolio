@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <h1>Contact Us</h1> <!-- Added Contact Us heading -->
+
+    <form action="https://getform.io/f/bxowooxa" method="POST">
+        <!-- Name Field -->
+        <label for="name"></label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        
+        <!-- Email Field -->
+        <label for="email">:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
+        <!-- Purpose Field -->
+        <label for="purpose"></label>
+        <input type="text" id="purpose" name="purpose" placeholder="Enter your purpose" required>
+
+        <!-- Hidden Honeypot Field (for spam prevention) -->
+        <input type="hidden" name="_gotcha" style="display:none !important">
+        
+        <!-- Submit Button -->
+        <button type="submit">Send</button>
+    </form>
+    
+    <script src="contact.js"></script>
+</body>
+</html>
